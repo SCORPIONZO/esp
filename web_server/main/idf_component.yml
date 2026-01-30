@@ -1,5 +1,5 @@
 ## IDF Component Manager Manifest File
-description: Basic web server example
+description: Basic web server example with LED control
 
 dependencies:
   idf:

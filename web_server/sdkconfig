@@ -431,6 +431,8 @@ CONFIG_PARTITION_TABLE_OFFSET=0x8000
 CONFIG_PARTITION_TABLE_MD5=y
 # end of Partition Table
 
+CONFIG_BLINK_GPIO=2
+
 #
 # Compiler options
 #

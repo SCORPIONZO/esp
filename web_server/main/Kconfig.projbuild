@@ -1,0 +1,7 @@
+# Kconfig file for the main component
+
+config BLINK_GPIO
+    int "GPIO number for blinking LED"
+    default 2
+    help
+      This specifies which GPIO to use for controlling the LED.

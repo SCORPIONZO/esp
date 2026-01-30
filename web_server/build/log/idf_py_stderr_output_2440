@@ -1,0 +1,20 @@
+Command: ninja all
+CMake Error at C:/Espressif/frameworks/esp-idf-v5.5.2-2/tools/cmake/build.cmake:629 (message):
+  WARNING: Component "espressif/esp_http_server" not found
+
+  WARNING: Component "espressif/esp_http_server" not found
+
+  ERROR: Version solving failed:
+
+      - no versions of espressif/esp_http_server match ^1.0.0
+      - project depends on espressif/esp_http_server (^1.0.0)
+
+  Result: Because project depends on espressif/esp_http_server (^1.0.0) which
+  doesn't match any versions, version solving failed.
+
+Call Stack (most recent call first):
+  C:/Espressif/frameworks/esp-idf-v5.5.2-2/tools/cmake/project.cmake:740 (idf_build_process)
+  CMakeLists.txt:9 (project)
+
+
+ninja: error: rebuilding 'build.ninja': subcommand failed

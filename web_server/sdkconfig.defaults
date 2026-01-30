@@ -1,3 +1,6 @@
+# Конфигурация проекта
+CONFIG_BLINK_GPIO=2
+
 # Default configuration for web server project
 
 # Enable HTTP server component

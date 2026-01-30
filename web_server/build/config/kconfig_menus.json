@@ -5282,6 +5282,16 @@
         "type": "menu"
     },
     {
+        "children": [],
+        "depends_on": null,
+        "help": "This specifies which GPIO to use for controlling the LED.",
+        "id": "BLINK_GPIO",
+        "name": "BLINK_GPIO",
+        "range": null,
+        "title": "GPIO number for blinking LED",
+        "type": "int"
+    },
+    {
         "children": [
             {
                 "children": [

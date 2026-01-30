@@ -15,6 +15,8 @@ def test_http_server_available(dut):
     response = requests.get(url)
     assert response.status_code == 200
     assert "ESP32 Web Server" in response.text
+    # Check that LED controls are present
+    assert "LED" in response.text
 
 def test_status_endpoint(dut):
     """Test that the status endpoint returns JSON data"""
@@ -32,23 +34,30 @@ def test_status_endpoint(dut):
     assert 'uptime' in data
     assert 'free_heap' in data
     assert 'min_free_heap' in data
-    assert 'cpu_freq_mhz' in data
+    assert 'led_state' in data  # Updated to expect led_state in response
+    assert 'chip_model' in data
+    assert 'cores' in data
 
-def test_info_endpoint(dut):
-    """Test that the info endpoint returns device information"""
+def test_led_control_endpoints(dut):
+    """Test that the LED control endpoints work properly"""
     # Get the IP address from the DUT (Device Under Test)
     dut.expect('Starting HTTP Server')
     ip_address = dut.expect(r'Access the web server at http://(\d+\.\d+\.\d+\.\d+)')[0]
     
-    # Test the info endpoint
-    url = f"http://{ip_address}/info"
+    # Test LED on endpoint
+    url = f"http://{ip_address}/ledon"
     response = requests.get(url)
     assert response.status_code == 200
+    assert "включен" in response.text or "on" in response.text
     
-    # Verify that the response is valid JSON
-    data = response.json()
-    assert 'model' in data
-    assert 'cores' in data
-    assert 'features' in data
-    assert 'revision' in data
-    assert 'flash_size_mb' in data
+    # Test LED off endpoint
+    url = f"http://{ip_address}/ledoff"
+    response = requests.get(url)
+    assert response.status_code == 200
+    assert "выключен" in response.text or "off" in response.text
+    
+    # Test LED toggle endpoint
+    url = f"http://{ip_address}/ledtoggle"
+    response = requests.get(url)
+    assert response.status_code == 200
+    assert "переключен" in response.text or "toggled" in response.text
