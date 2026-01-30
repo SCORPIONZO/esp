@@ -1,0 +1,8 @@
+## IDF Component Manager Manifest File
+description: Basic web server example
+
+dependencies:
+  idf:
+    version: ">=4.4"
+  # esp_http_server теперь встроен в IDF, начиная с версии 5.x
+  # Убираем специфическую версию компонента

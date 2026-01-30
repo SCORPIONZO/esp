@@ -1,0 +1,98 @@
+Command: C:\Espressif\python_env\idf5.5_py3.11_env\Scripts\python.exe C:\Espressif\frameworks\esp-idf-v5.5.2-2\tools/idf_monitor.py -p COM4 -b 115200 --toolchain-prefix xtensa-esp32-elf- --target esp32 --revision 0 C:\Users\1\Desktop\esp\web_server\build\bootloader\bootloader.elf --force-color -m 'C:\Espressif\python_env\idf5.5_py3.11_env\Scripts\python.exe' 'C:\Espressif\frameworks\esp-idf-v5.5.2-2\tools\idf.py'
+ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6384
+load:0x40078000,len:15916
+load:0x40080400,len:3920
+entry 0x40080644
+[0;32mI (27) boot: ESP-IDF v5.5.2 2nd stage bootloader[0m
+[0;32mI (27) boot: compile time Jan 27 2026 09:11:05[0m
+[0;32mI (27) boot: Multicore bootloader[0m
+[0;32mI (29) boot: chip revision: v3.1[0m
+[0;32mI (32) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (35) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (39) boot.esp32: SPI Flash Size : 2MB[0m
+[0;32mI (42) boot: Enabling RNG early entropy source...[0m
+[0;32mI (47) boot: Partition Table:[0m
+[0;32mI (49) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (56) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (62) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (69) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (75) boot: End of partition table[0m
+[0;32mI (79) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=1d64ch (120396) map[0m
+[0;32mI (127) esp_image: segment 1: paddr=0002d674 vaddr=3ffb0000 size=029a4h ( 10660) load[0m
+[0;32mI (132) esp_image: segment 2: paddr=00030020 vaddr=400d0020 size=8efc4h (585668) map[0m
+[0;32mI (332) esp_image: segment 3: paddr=000befec vaddr=3ffb29a4 size=01590h (  5520) load[0m
+[0;32mI (334) esp_image: segment 4: paddr=000c0584 vaddr=40080000 size=18fc0h (102336) load[0m
+[0;32mI (376) esp_image: segment 5: paddr=000d954c vaddr=50000000 size=00020h (    32) load[0m
+[0;32mI (388) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (388) boot: Disabling RNG early entropy source...[0m
+[0;32mI (398) cpu_start: Multicore app[0m
+[0;32mI (407) cpu_start: GPIO 3 and 1 are used as console UART I/O pins[0m
+[0;32mI (407) cpu_start: Pro cpu start user code[0m
+[0;32mI (407) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (409) app_init: Application information:[0m
+[0;32mI (413) app_init: Project name:     relay_temp_control[0m
+[0;32mI (418) app_init: App version:      1[0m
+[0;32mI (421) app_init: Compile time:     Jan 27 2026 13:53:23[0m
+[0;32mI (426) app_init: ELF file SHA256:  ca4650d88...[0m
+[0;32mI (430) app_init: ESP-IDF:          v5.5.2[0m
+[0;32mI (434) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (438) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (442) efuse_init: Chip rev:         v3.1[0m
+[0;32mI (446) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (452) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (457) heap_init: At 3FFB8260 len 00027DA0 (159 KiB): DRAM[0m
+[0;32mI (462) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (468) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (473) heap_init: At 40098FC0 len 00007040 (28 KiB): IRAM[0m
+[0;33mW (480) spi_flash: Detected boya flash chip but using generic driver. For optimal functionality, enable `SPI_FLASH_SUPPORT_BOYA_CHIP` in menuconfig[0m
+[0;32mI (492) spi_flash: detected chip: generic[0m
+[0;32mI (495) spi_flash: flash io: dio[0m
+[0;33mW (498) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;32mI (511) main_task: Started on CPU0[0m
+[0;32mI (521) main_task: Calling app_main()[0m
+[0;32mI (521) app_main: Инициализация проекта управления реле и температурой[0m
+[0;32mI (561) wifi:wifi driver task: 3ffc0f4c, prio:23, stack:6656, core=0[0m
+[0;32mI (571) wifi:wifi firmware version: ee91c8c[0m
+[0;32mI (571) wifi:wifi certification version: v7.0[0m
+[0;32mI (571) wifi:config NVS flash: enabled[0m
+[0;32mI (571) wifi:config nano formatting: disabled[0m
+[0;32mI (571) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (581) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (581) wifi:Init management short buffer num: 32[0m
+[0;32mI (581) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (591) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (591) wifi:Init static rx buffer num: 10[0m
+[0;32mI (601) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (601) wifi_init: rx ba win: 6[0m
+[0;32mI (601) wifi_init: accept mbox: 6[0m
+[0;32mI (611) wifi_init: tcpip mbox: 32[0m
+[0;32mI (611) wifi_init: udp mbox: 6[0m
+[0;32mI (611) wifi_init: tcp mbox: 6[0m
+[0;32mI (611) wifi_init: tcp tx win: 5760[0m
+[0;32mI (621) wifi_init: tcp rx win: 5760[0m
+[0;32mI (621) wifi_init: tcp mss: 1440[0m
+[0;32mI (621) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (631) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;32mI (641) phy_init: phy_version 4863,a3a4459,Oct 28 2025,14:30:06[0m
+[0;32mI (721) wifi:mode : softAP (d4:e9:f4:65:68:f5)[0m
+[0;32mI (731) wifi:Total power save buffer number: 16[0m
+[0;32mI (731) wifi:Init max length of beacon: 752/752[0m
+[0;32mI (731) wifi:Init max length of beacon: 752/752[0m
+[0;32mI (731) RelayTempControl: WiFi AP initialized with SSID: ESP32-Relay-Control[0m
+[0;32mI (731) esp_netif_lwip: DHCP server started on interface WIFI_AP_DEF with IP: 192.168.4.1[0m
+[0;32mI (751) RelayTempControl: Authentication mode: 0[0m
+[0;32mI (751) RelayTempControl: Max connections: 4[0m
+[0;32mI (751) RelayTempControl: DNS Server started on port 53[0m
+[0;33mW (761) httpd_uri: httpd_register_uri_handler: no slots left for registering handler[0m
+[0;33mW (771) httpd_uri: httpd_register_uri_handler: no slots left for registering handler[0m
+[0;33mW (771) httpd_uri: httpd_register_uri_handler: no slots left for registering handler[0m
+[0;33mW (781) httpd_uri: httpd_register_uri_handler: no slots left for registering handler[0m
+[0;32mI (791) app_main: Система инициализирована и запущена[0m
+[0;32mI (801) main_task: Returned from app_main()[0m
+[1;31mE (1541) DS18B20: CRC check failed[0m
